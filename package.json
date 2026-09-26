@@ -1,6 +1,6 @@
 {
   "name": "@pipeworx/mcp-futuur",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "description": "Futuur Prediction Market MCP.",
   "type": "module",
   "main": "src/index.ts",
@@ -26,7 +26,7 @@
     "@cloudflare/workers-types": "^4.20260405.1"
   },
   "pipeworx": {
-    "sourceHash": "v1-db4831f8c29b1812f185e73360716b86118516f3129845540661aa3460e86e18",
-    "sourceCommit": "76aa8f5d9b5dc2f665563030647c68e661478864"
+    "sourceHash": "v1-1a25290bcc62ed169f57bf118e6c4a8b7dd1f9c4ed29cc8932d116d047251b95",
+    "sourceCommit": "91681e9a4a137fa0051d58e32f38c64b6334af5c"
   }
 }
