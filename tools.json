@@ -1,0 +1,60 @@
+[
+  {
+    "name": "search_markets",
+    "description": "Search Futuur prediction markets (politics, crypto, sports, science) by text. Returns open markets by default with per-outcome implied probabilities in both play-money (OOM) and real-money (USDC) modes. Keyless.",
+    "inputSchema": {
+      "type": "object",
+      "properties": {
+        "search": {
+          "type": "string",
+          "description": "Text query, e.g. \"trump\", \"bitcoin\", \"world cup\". Omit to browse top markets."
+        },
+        "currency_mode": {
+          "type": "string",
+          "description": "Which currency the per-outcome probabilities reflect: \"real_money\" (USDC) or \"play_money\" (OOM). Both are always returned; this just hints which to emphasize. Default \"real_money\"."
+        },
+        "status": {
+          "type": "string",
+          "description": "Market status: \"open\" (default) or \"resolved\"."
+        },
+        "limit": {
+          "type": "number",
+          "description": "Max markets to return (default 10, max 25)."
+        }
+      }
+    }
+  },
+  {
+    "name": "get_market",
+    "description": "Get one Futuur market by id with its full outcome list and per-outcome implied probabilities (play-money OOM + real-money USDC, as percentages), volumes, tags, description, and resolution status. Example id: 231754 (\"Which price will Bitcoin hit in 2026?\"). Keyless.",
+    "inputSchema": {
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "number",
+          "description": "Futuur market id, e.g. 231754. Get ids from search_markets or top_markets."
+        }
+      },
+      "required": [
+        "id"
+      ]
+    }
+  },
+  {
+    "name": "top_markets",
+    "description": "Most-active open Futuur markets (attention signal), ranked by trading volume. Returns each market with per-outcome implied probabilities (OOM play-money + USDC real-money). Keyless.",
+    "inputSchema": {
+      "type": "object",
+      "properties": {
+        "limit": {
+          "type": "number",
+          "description": "Max markets to return (default 15, max 25)."
+        },
+        "currency_mode": {
+          "type": "string",
+          "description": "Which currency to rank volume by and emphasize: \"real_money\" (USDC, default) or \"play_money\" (OOM)."
+        }
+      }
+    }
+  }
+]
